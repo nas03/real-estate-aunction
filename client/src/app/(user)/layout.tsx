@@ -10,7 +10,7 @@ export default function Layout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<main className={cn(inter.className, ' text-black bg-white')}>
+		<main className={cn(inter.className, ' text-black ')}>
 			<NavBar />
 			{children}
 		</main>
