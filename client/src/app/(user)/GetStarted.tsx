@@ -1,7 +1,7 @@
 const GetStarted = () => {
 	return (
 		<>
-			<p>Hello GetStarted</p>
+			<p className="text-white">Hello GetStarted</p>
 		</>
 	);
 };

@@ -6,6 +6,7 @@ import { Icon } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from './NavBar.module.css';
 import { motion, useAnimation } from 'framer-motion';
+import zIndex from '@mui/material/styles/zIndex';
 const NavBar = () => {
 	const [section, setSection] = useState('');
 	const [hover, setHover] = useState(false);
@@ -21,12 +22,16 @@ const NavBar = () => {
 			x: '-100%', // Slide out to the right (adjust for other directions)
 		},
 	};
-	useEffect(() => {
-		if (openSideBar) {
-			window.scrollTo(0, 0);
-			document.body.style.overflow = 'hidden';
-		}
-	}, [openSideBar]);
+	const blurVariants = {
+		visible: {
+			opacity: 0.7,
+			zIndex: 40,
+		},
+		hidden: {
+			opacity: 0,
+			zIndex: 0,
+		},
+	};
 	return (
 		<>
 			<header className="">
@@ -125,7 +130,11 @@ const NavBar = () => {
 							transition={{
 								bounce: 0,
 							}}
-							className={`w-[35%] bg-white opacity-[1] font-sans font-medium text-black z-10 absolute h-screen
+							initial={{
+								opacity: 0,
+								x: '-100%',
+							}}
+							className={`w-[35%] bg-white opacity-[1] font-sans font-medium text-black z-50 absolute h-screen
 						 `}>
 							<ul className="flex flex-col gap-10 ml-5 pt-10">
 								<li>
@@ -142,10 +151,16 @@ const NavBar = () => {
 								</li>
 							</ul>
 						</motion.div>
-						<div
+						<motion.div
+							animate={animationControl}
+							initial={{
+								opacity: 0,
+								z: 0,
+							}}
+							variants={blurVariants}
 							className={`${
 								!openSideBar && 'bg-[#000] opacity-70'
-							} w-[100%]`}></div>
+							} w-[100%]`}></motion.div>
 					</div>
 				</nav>
 			</header>
