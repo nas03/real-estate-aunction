@@ -21,6 +21,12 @@ const NavBar = () => {
 			x: '-100%', // Slide out to the right (adjust for other directions)
 		},
 	};
+	useEffect(() => {
+		if (openSideBar) {
+			window.scrollTo(0, 0);
+			document.body.style.overflow = 'hidden';
+		}
+	}, [openSideBar]);
 	return (
 		<>
 			<header className="">
@@ -107,33 +113,40 @@ const NavBar = () => {
 								href={'#get-started'}
 								onClick={() => setSection('get-started')}
 								className={`px-6 py-2 bg-red-600 text-white rounded-md font-[500] `}
-								title="Join">
+								title="sJoin">
 								Join
 							</Link>
 						</div>
 					</div>
-
-					<motion.div
-						animate={animationControl}
-						variants={animationVariants}
-						
-						className={`w-[40%] bg-red-500 z-10 absolute h-screen
-						 text-white`}>
-						<ul className="">
-							<li>
-								<a href="">New Homes</a>
-							</li>
-							<li>
-								<a href="">Find Agents</a>
-							</li>
-							<li>
-								<a href="">Home loans</a>
-							</li>
-							<li>
-								<a href="">News</a>
-							</li>
-						</ul>
-					</motion.div>
+					<div className="flex flex-row w-screen h-screen absolute">
+						<motion.div
+							animate={animationControl}
+							variants={animationVariants}
+							transition={{
+								bounce: 0,
+							}}
+							className={`w-[35%] bg-white opacity-[1] font-sans font-medium text-black z-10 absolute h-screen
+						 `}>
+							<ul className="flex flex-col gap-10 ml-5 pt-10">
+								<li>
+									<a href="">New Homes</a>
+								</li>
+								<li>
+									<a href="">Find Agents</a>
+								</li>
+								<li>
+									<a href="">Home loans</a>
+								</li>
+								<li>
+									<a href="">News</a>
+								</li>
+							</ul>
+						</motion.div>
+						<div
+							className={`${
+								!openSideBar && 'bg-[#000] opacity-70'
+							} w-[100%]`}></div>
+					</div>
 				</nav>
 			</header>
 		</>
