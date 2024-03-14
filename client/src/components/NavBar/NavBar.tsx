@@ -36,7 +36,7 @@ const NavBar = () => {
 		<>
 			<header className="">
 				<nav className=" ">
-					<div className="flex justify-between p-[2%] border-b-2 w-screen items-center relative">
+					<div className="flex justify-between p-[2%] w-screen items-center relative">
 						<div className="flex flex-row items-center gap-4">
 							<MenuIcon
 								cursor="pointer"
@@ -55,7 +55,7 @@ const NavBar = () => {
 								<p className="pl-2 font-[600]">RealEstate.com</p>
 							</Link>
 						</div>
-						<div className="flex justify-center items-center font-[600] text-lg h-[100%] max-md:hidden">
+						<div className="flex justify-center items-center font-[600] text-base h-[100%] max-md:hidden">
 							<Link
 								href={'#home'}
 								onClick={() => setSection('home')}
