@@ -10,7 +10,7 @@ export default function Layout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<main className={cn(inter.className, ' text-black ')}>
+		<main className={cn(inter.className, ' max-w-full text-black')}>
 			<NavBar />
 			{children}
 		</main>

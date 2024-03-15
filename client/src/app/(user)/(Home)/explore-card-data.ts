@@ -9,9 +9,9 @@ interface IPropsCard {
 export const cardContent: IPropsCard[] = [
 	{
 		image: '/img/home/buying-1.png',
-		heading: 'Get estimated property prices with a realEstimate &trade;',
+		heading: `Get estimated property prices with a realEstimate` + '\u2122',
 		content:
-			"See how much your property's worth whether you own it or want to buy it ",
+			"See how much your property's worth whether you own it or want to buy it.",
 		link: '#home',
 		linkName: 'Check property values',
 	},
@@ -19,7 +19,7 @@ export const cardContent: IPropsCard[] = [
 		image: '/img/home/buying-1.png',
 		heading: 'Get estimated property prices with a realEstimate &trade;',
 		content:
-			"See how much your property's worth whether you own it or want to buy it ",
+			"See how much your property's worth whether you own it or want to buy it.",
 		link: '#home',
 		linkName: 'Check property values',
 	},
@@ -27,7 +27,7 @@ export const cardContent: IPropsCard[] = [
 		image: '/img/home/buying-1.png',
 		heading: 'Get estimated property prices with a realEstimate &trade;',
 		content:
-			"See how much your property's worth whether you own it or want to buy it ",
+			"See how much your property's worth whether you own it or want to buy it.",
 		link: '#home',
 		linkName: 'Check property values',
 	},

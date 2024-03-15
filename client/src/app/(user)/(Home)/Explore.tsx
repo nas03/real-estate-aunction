@@ -3,8 +3,14 @@ import Image from 'next/image';
 import Tab from '@mui/material/Tab';
 import Link from 'next/link';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Search } from '@mui/icons-material';
-import { useState, useEffect } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from '@/components/ui/carousel';
 import { cardContent } from './explore-card-data';
 const labels = ['Buying', 'Renting', 'Selling', 'Researching'];
 interface IPropsCard {
@@ -14,7 +20,7 @@ interface IPropsCard {
 	link?: string;
 	linkName?: string;
 }
-const Card: React.FC<IPropsCard> = ({
+const Cards: React.FC<IPropsCard> = ({
 	image,
 	heading,
 	content,
@@ -23,11 +29,21 @@ const Card: React.FC<IPropsCard> = ({
 }) => {
 	return (
 		<>
-			<div className="">
-				<Image src={image} width={64} height={64} alt="card" />
-				<h3>{heading}</h3>
-				<p>{content}</p>
-				<Link href={`${link}`}>{linkName}</Link>
+			<div className="border-[1.5px] w-[20rem] rounded-xl flex flex-col">
+				<Image
+					src={image}
+					width={240}
+					height={240}
+					alt="card"
+					className="w-28 h-28 ml-auto mr-auto"
+				/>
+				<div className="px-3 pb-3">
+					<h3 className="font-[600] text-base">{heading}</h3>
+					<p className="text-sm text-slate-600 py-3">{content}</p>
+					<Link href={`${link}`} className=" font-bold text-sm text-[#00639E]">
+						{linkName}
+					</Link>
+				</div>
 			</div>
 		</>
 	);
@@ -40,7 +56,7 @@ const Explore = () => {
 	};
 	return (
 		<>
-			<div className="pl-10 mt-5">
+			<div className="mt-5">
 				<h3 className="text-black font-bold text-xl">
 					Explore all things property
 				</h3>
@@ -82,16 +98,23 @@ const Explore = () => {
 							/>
 						))}
 					</TabList>
-					{cardContent.map((card, index) => (
-						<TabPanel key={index} value="0" className="w-full">
-							<Card
-								image={card.image}
-								content={card.content}
-								heading={card.heading}
-								link={card.link}
-								linkName={card.linkName}
-							/>
-						</TabPanel>
+					{labels.map((label, index) => (
+						<div className="flex flex-row" key={index}>
+							{cardContent.map((card) => (
+								<TabPanel
+									key={card.heading}
+									value={`${index}`}
+									className="w-full">
+									<Cards
+										image={card.image}
+										content={card.content}
+										heading={card.heading}
+										link={card.link}
+										linkName={card.linkName}
+									/>
+								</TabPanel>
+							))}
+						</div>
 					))}
 				</TabContext>
 			</div>

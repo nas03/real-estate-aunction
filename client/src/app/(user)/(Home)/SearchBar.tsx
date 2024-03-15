@@ -13,7 +13,7 @@ const SearchBar: React.FC = () => {
 	};
 	return (
 		<>
-			<div className="ml-auto mr-auto max-md:w-screen min-h-[16rem] lg:h-[20rem] md:w-[85%] flex flex-col items-center relative">
+			<div className="ml-auto mr-auto min-h-[16rem] lg:h-[20rem] md:w-[85%] flex flex-col items-center relative">
 				<Image
 					src={'/img/home/search-bg.png'}
 					width={1600}

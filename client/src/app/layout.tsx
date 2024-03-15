@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={cn(inter.className, 'flex flex-col scroll-smooth')}>
+			<body
+				className={cn(
+					inter.className,
+					'flex min-w-screen flex-col scroll-smooth'
+				)}>
 				{children}
 			</body>
 		</html>

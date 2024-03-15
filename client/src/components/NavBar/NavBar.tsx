@@ -34,9 +34,9 @@ const NavBar = () => {
 	};
 	return (
 		<>
-			<header className="">
+			<header className="max-w-full">
 				<nav className=" ">
-					<div className="flex justify-between p-[2%] w-screen items-center relative">
+					<div className="flex w-full p-[2%] justify-between items-center relative">
 						<div className="flex flex-row items-center gap-4">
 							<MenuIcon
 								cursor="pointer"
@@ -123,7 +123,7 @@ const NavBar = () => {
 							</Link>
 						</div>
 					</div>
-					<div className="flex flex-row w-screen h-screen absolute">
+					<div className="flex flex-row w-full h-screen absolute">
 						<motion.div
 							animate={animationControl}
 							variants={animationVariants}
