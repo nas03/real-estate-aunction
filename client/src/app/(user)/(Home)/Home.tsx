@@ -11,8 +11,7 @@ const Home: React.FC = () => {
 	};
 	return (
 		<>
-			<div className="
-			">
+			<div className="mx-5">
 				<SearchBar />
 				<Explore />
 				<LatestNews />

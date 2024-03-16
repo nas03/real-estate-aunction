@@ -11,7 +11,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from '@/components/ui/carousel';
-import { cardContent } from './explore-card-data';
+import { cardContent } from './data';
 const labels = ['Buying', 'Renting', 'Selling', 'Researching'];
 interface IPropsCard {
 	image: string;
@@ -29,7 +29,7 @@ const Cards: React.FC<IPropsCard> = ({
 }) => {
 	return (
 		<>
-			<div className="border-[1.5px] w-[20rem] rounded-xl flex flex-col">
+			<div className="border-[1.5px] max-w-[20rem] rounded-xl flex flex-col">
 				<Image
 					src={image}
 					width={240}
@@ -56,8 +56,8 @@ const Explore = () => {
 	};
 	return (
 		<>
-			<div className="mt-5">
-				<h3 className="text-black font-bold text-xl">
+			<div className="my-10 w-full flex flex-col justify-start">
+				<h3 className=" ml-2 text-black font-bold w-fit text-xl">
 					Explore all things property
 				</h3>
 				<TabContext value={value}>
@@ -74,6 +74,7 @@ const Explore = () => {
 						style={{
 							marginTop: '1rem',
 							height: '1rem',
+							marginLeft: '8px'
 						}}
 						aria-label="Properties to call home">
 						{labels.map((label, index) => (
@@ -85,7 +86,7 @@ const Explore = () => {
 									textTransform: 'capitalize',
 									fontSize: '0.8rem',
 									margin: '0rem .3rem',
-									border: '1.5px solid black',
+									border: '2px solid black',
 									padding: '0.5rem 0.75rem',
 									borderRadius: 9999,
 									whiteSpace: 'wrap',
@@ -99,12 +100,12 @@ const Explore = () => {
 						))}
 					</TabList>
 					{labels.map((label, index) => (
-						<div className="flex flex-row" key={index}>
+						<div className="flex flex-row w-fit" key={index}>
 							{cardContent.map((card) => (
 								<TabPanel
 									key={card.heading}
 									value={`${index}`}
-									className="w-full">
+									className="w-full p-3">
 									<Cards
 										image={card.image}
 										content={card.content}

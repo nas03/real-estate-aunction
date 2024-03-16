@@ -32,3 +32,37 @@ export const cardContent: IPropsCard[] = [
 		linkName: 'Check property values',
 	},
 ];
+
+interface NewsData {
+	image: string;
+	heading: string;
+	readTime: number;
+}
+
+export const newsData: NewsData[] = [
+	{
+		image: '/img/home/news-1.jpeg',
+		heading: "First homes coming soon at Yarraville's iconic former denim factory",
+		readTime: 5,
+	},
+	{
+		image: '/img/home/news-1.jpeg',
+		heading: 'How to get the best mortgage deal',
+		readTime: 5,
+	},
+	{
+		image: '/img/home/news-1.jpeg',
+		heading: 'How to get the best mortgage deal',
+		readTime: 5,
+	},
+	{
+		image: '/img/home/news-1.jpeg',
+		heading: 'How to get the best mortgage deal',
+		readTime: 5,
+	},
+	{
+		image: '/img/home/news-1.jpeg',
+		heading: 'How to get the best mortgage deal',
+		readTime: 5,
+	},
+];

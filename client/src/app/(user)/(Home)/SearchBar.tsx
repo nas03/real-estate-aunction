@@ -13,13 +13,15 @@ const SearchBar: React.FC = () => {
 	};
 	return (
 		<>
-			<div className="ml-auto mr-auto min-h-[16rem] lg:h-[20rem] md:w-[85%] flex flex-col items-center relative">
+			<div className="min-h-[16rem] lg:h-[20rem] flex flex-col items-center relative">
 				<Image
 					src={'/img/home/search-bg.png'}
+
+
 					width={1600}
 					height={900}
 					alt="search-bg"
-					className="absolute z-0 md:rounded-lg object-center object-cover h-full overflow-clip text-center "
+					className="absolute w-[80%] z-0 md:rounded-lg object-center object-cover h-full overflow-clip text-center "
 				/>
 				<div className="z-10">
 					<p className=" font-bold text-xl mt-5 text-center">

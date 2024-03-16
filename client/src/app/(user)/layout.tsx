@@ -10,9 +10,9 @@ export default function Layout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<main className={cn(inter.className, ' max-w-full text-black')}>
+		<div className={cn(inter.className, 'box-b max-w-[100vw] text-black')}>
 			<NavBar />
 			{children}
-		</main>
+		</div>
 	);
 }
